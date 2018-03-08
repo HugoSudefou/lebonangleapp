@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlApi: 'http://collab-lod.nexen.net:12345/api/'
 };
