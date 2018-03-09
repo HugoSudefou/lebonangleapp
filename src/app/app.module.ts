@@ -16,6 +16,9 @@ import { JwtInterceptor } from './interceptor/jwt.interceptor';
 import { UserService } from './services/user.service';
 import { AuthenticationService} from './services/authentication.service';
 import { AlertService } from './services/alert.service';
+import { SearchNoticeComponent } from './search-notice/search-notice.component';
+import { AddNoticeComponent } from './add-notice/add-notice.component';
+import { MyNoticeComponent } from './my-notice/my-notice.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AlertService } from './services/alert.service';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
+    SearchNoticeComponent,
+    AddNoticeComponent,
+    MyNoticeComponent
   ],
   imports: [
     BrowserModule,

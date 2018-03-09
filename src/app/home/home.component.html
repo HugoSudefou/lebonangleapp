@@ -1,7 +1,26 @@
-<p>
-  home works!
-</p>
+<section *ngIf="type === 'seller'">
+  <p>
+    Bonjour Acheteur
+  </p>
+  <div>
+    <button class="btn" (click)="searchNotice()">Rechercher une annonce</button>
+    <button class="btn" (click)="myNotice('seller')">Mes annonces</button>
+  </div>
 
-<div>
+</section>
+
+<section *ngIf="type === 'buyer'">
+  <p>
+    Bonjour Vendeur
+  </p>
+  <div>
+    <button class="btn" (click)="addNotice()">Poster une annonce</button>
+    <button class="btn" (click)="myNotice('buyer')">Mes annonces</button>
+  </div>
+</section>
+
+<div class="test">
   <button (click)="test()">Test</button>
+  <button (click)="testChangeProfil('buyer')">Passer Vendeur</button>
+  <button (click)="testChangeProfil('seller')">Passer achteur</button>
 </div>

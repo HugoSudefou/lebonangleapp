@@ -12,16 +12,47 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  currentUser;
+  type;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
-    private userService: UserService) { }
+    private userService: UserService) {}
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.type = JSON.parse(localStorage.getItem('currentUser')).type;
   }
 
+  searchNotice(){
+    console.log('search Notice');
+    this.router.navigate(['searchNotice']);
+  }
+  addNotice(){
+    console.log('Add Notice');
+    this.router.navigate(['addNotice']);
+  }
+  myNotice(profil){
+    console.log('My Notice for : ', profil);
+    this.router.navigate(['myNotice']);
+  }
+
+
+
+
+
+
+  /*
+  * Fonction Test a enlever
+  * FIXME
+  * */
+
+  testChangeProfil(profil){
+    console.log('My Notice for : ', profil);
+    this.type = profil;
+  }
 
   test() {
     this.userService.loginTest().subscribe(
